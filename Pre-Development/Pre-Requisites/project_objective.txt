@@ -1,0 +1,11 @@
+By the end of this project we will be able to understand :
+
+	-->Regression and Classification Problems
+
+	-->To grab insights from data through visualization.
+
+	-->Applying different algorithms according 
+
+	-->Evaluation metrics
+
+ 	-->how to build a web application using the Flask framework.
