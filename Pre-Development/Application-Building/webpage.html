@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <title>Admission Prediction</title>
+   <style>
+       .login{
+          text-align:center;
+          margin:auto;
+          width:100%; 
+       }
+       .button{
+           border: none;
+           color:black;
+           padding:5px;
+           text-align: center;
+           text-decoration: none;
+           display: inline-block;
+           font-size: 14px;
+           margin: 4px 2px;
+           cursor: pointer; 
+       }
+        
+          
+   </style>  
+</head>
+<body  style="background-color:powderblue;">
+  <div class="login">
+      <h1>University AdmissionPrediction</h1>  
+      
+      <form action="{{ url_for('y_predict')}}" method="post">
+      <label for="gre"><b>ENTER GRE SCORE:</b></label><br>
+      <input type="text" name="GRE_score" placeholder="GRE_score" id="gre" required="required" /><br><br>
+      <label for="toefl"><b>ENTER TOEFL SCORE:</b></label><br>
+      <input type="text" name="TOEFL_score" placeholder="TOEFL_score" id="toefl"  required="required" /><br><br>
+      <label for="rating"><b>ENTER THE UNIVERSITY RATING:</b></label><br> 
+      <select name="University_rating" id="rating" required="required">
+           <option value="">Choose Rating</option>   
+           <option value=1>1</option>   
+           <option value=2>2</option>   
+           <option value=3>3</option> 
+           <option value=4>4</option> 
+           <option value=5>5</option> 
+                 
+      </select><br><br>
+      <label for="sop"><b>ENTER SOP:</b></label><br> 
+      <input type="text" name="sop" placeholder="sop" id="sop" required="required" /><br><br>
+      <label for="lor"><b>ENTER LOR:</b></label><br>
+      <input type="text" name="lor" placeholder="lor" id="lor" required="required" /><br><br>
+      <label for="gpa"><b>ENTER CGPA:</b></label><br>
+      <input type="text" name="cgpa" placeholder="cgpa" id="gpa" required="required" /> <br><br>
+      <label for="research"><b>HAVE YOU DONE ANY RESEARCH:</b></label><br>
+      <select name="Research" id="research" required="required">
+           <option value="">Research</option>   
+           <option value=1>YES</option>   
+           <option value=0>NO</option>   
+           
+      </select><br><br>
+      
+      <button type="submit" class="button">Predict</button>
+
+ 
+     </form>
+ 
+     <br>
+     <br>
+    
+     {{prediction_text}}
+  </div>
+ </body>
+</html>
